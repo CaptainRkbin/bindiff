@@ -29,17 +29,19 @@ jobs:
       uses: turtlesec-no/get-ninja@1.1.0
 
     - name: Create Build Environment
-      env:
-        IDASDK_SECRET: ${{ secrets.IDASDK_SECRET }}
+      #env:
+      #  IDASDK_SECRET: ${{ secrets.IDASDK_SECRET }}
       working-directory: ${{ github.workspace }}
       shell: bash
       run: |
+        set -x
         mkdir -p "${{ runner.workspace }}/build" \
                  ida/idasdk
-        mv binexport/ida/idasdk/idasdk*.gpg \
-           ida/idasdk/
-        binexport/.github/scripts/decrypt_secret.sh
-        unzip -q "${{ runner.workspace }}/build/idasdk_teams82.zip" \
+        #mv binexport/ida/idasdk/idasdk*.gpg \
+        #   ida/idasdk/
+        #binexport/.github/scripts/decrypt_secret.sh
+        curl -Lo "${{ runner.workspace }}/build/idasdk90.zip" https://dl.naixi.net/tools/ida/9.0/idasdk90.zip
+        unzip "${{ runner.workspace }}/build/idasdk90.zip" \
               -d "${{ runner.workspace }}/build/"
 
     - name: Enable Developer Command Prompt (Windows)
