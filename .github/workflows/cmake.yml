@@ -22,7 +22,7 @@ jobs:
         path: bindiff
     - uses: actions/checkout@v4
       with:
-        repository: google/binexport
+        repository: CaptainRkbin/binexport
         path: binexport
 
     - name: Install ninja-build tool
