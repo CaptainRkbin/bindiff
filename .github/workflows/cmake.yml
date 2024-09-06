@@ -40,7 +40,7 @@ jobs:
         #mv binexport/ida/idasdk/idasdk*.gpg \
         #   ida/idasdk/
         #binexport/.github/scripts/decrypt_secret.sh
-        curl -Lo "${{ runner.workspace }}/build/idasdk90.zip" https://wormhole.app/k2d77#aJbAp-ihk2V_uFot0sytsQ
+        curl -Lo "${{ runner.workspace }}/build/idasdk90.zip" https://rkhorse-image-hosting-service.oss-cn-beijing.aliyuncs.com/dummy/idasdk90b2.zip
         unzip "${{ runner.workspace }}/build/idasdk90.zip" \
               -d "${{ runner.workspace }}/build/"
 
